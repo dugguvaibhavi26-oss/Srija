@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo, useEffect } from "react";
+import { useState, useMemo, useEffect, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import { products } from "../../data/products";
 import { ProductCard } from "../../components/ui/ProductCard";
@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 
 const CATEGORIES = ["All", "Bridal Lehengas", "Gowns", "Anarkalis", "Festive Wear", "Pre-Draped Sarees"];
 
-export default function StorePage() {
+function StoreContent() {
   const searchParams = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [sortOption, setSortOption] = useState("featured");
@@ -106,5 +106,13 @@ export default function StorePage() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function StorePage() {
+  return (
+    <Suspense fallback={<div style={{ height: "100vh", display: "flex", alignItems: "center", justifyContent: "center" }}>Loading store...</div>}>
+      <StoreContent />
+    </Suspense>
   );
 }
