@@ -1,0 +1,195 @@
+.section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  transition: background-color 1.5s var(--ease-luxury);
+}
+
+.canvasContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.htmlOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none; /* Let interactions pass through to canvas */
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-12) var(--space-16);
+}
+
+.activeCard {
+  pointer-events: auto;
+  position: absolute;
+  right: 8vw;
+  left: auto;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  opacity: 1; 
+  z-index: 10;
+
+  /* Glass effect */
+  background: rgba(255, 255, 240, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 240, 0.8);
+  color: var(--color-luxury-brown-dark);
+  box-shadow: var(--shadow-luxury);
+}
+
+.chapterNumber {
+  font-family: var(--font-serif);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: inherit;
+  font-weight: 800; /* Increased boldness */
+  margin-bottom: var(--space-2);
+}
+
+.occasionName {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 600; /* Increased boldness */
+  color: inherit;
+  margin: 0;
+  line-height: 1;
+}
+
+.occasionDesc {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: inherit;
+  line-height: 1.6;
+  font-weight: 500; /* Increased boldness */
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-6);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  opacity: 0.8;
+}
+
+.ctaButton {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700; /* Increased boldness */
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: inherit;
+  background: transparent;
+  border: 2px solid currentColor;
+  padding: 12px 32px;
+  border-radius: 2px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaButton:hover {
+  background: currentColor;
+  color: var(--color-background); /* Invert text color on hover */
+  border-color: currentColor;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 1024px) {
+  .activeCard {
+    left: 2vw;
+    max-width: 350px;
+  }
+}
+
+.progressContainer {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .htmlOverlay {
+    padding: 0;
+  }
+
+  .activeCard {
+    position: absolute;
+    top: auto;
+    bottom: max(var(--space-6), env(safe-area-inset-bottom));
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    transform: none;
+    width: 80%;
+    max-width: 280px;
+    background: rgba(255, 255, 240, 0.75);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: var(--space-4);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 240, 0.9);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+  }
+  
+  .chapterNumber {
+    font-weight: 800;
+    font-size: 0.55rem;
+  }
+
+  .occasionName {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+  }
+
+  .occasionDesc {
+    font-size: 0.75rem;
+    font-weight: 600;
+    -webkit-line-clamp: 2;
+  }
+
+  .ctaButton {
+    width: 100%;
+    text-align: center;
+    padding: 6px 12px;
+    font-size: 0.6rem;
+  }
+
+  .ctaButton:hover {
+    background: currentColor;
+    color: var(--color-ivory);
+    box-shadow: none;
+  }
+
+  .progressContainer {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-2);
+    margin-top: var(--space-6);
+    width: 100%;
+  }
+
+  .progressDot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 240, 0.3);
+    transition: all var(--duration-fast) ease;
+  }
+
+  .progressDotActive {
+    background-color: var(--color-champagne);
+    transform: scale(1.5);
+  }
+}

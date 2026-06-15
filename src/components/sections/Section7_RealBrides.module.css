@@ -1,0 +1,126 @@
+.section {
+  padding: var(--space-32) var(--space-12);
+  background-color: var(--color-luxury-brown);
+  color: var(--color-ivory);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-16);
+}
+
+.header {
+  text-align: center;
+  max-width: 600px;
+}
+
+.subtitle {
+  font-size: var(--text-sm);
+  color: var(--color-champagne);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-5xl);
+  color: var(--color-ivory);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.desc {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 240, 0.7);
+  line-height: 1.6;
+}
+
+.reviewsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  width: 100%;
+}
+
+.reviewCard {
+  background: rgba(255, 255, 240, 0.95);
+  padding: var(--space-8);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  transition: transform 0.3s ease;
+}
+
+.reviewCard:hover {
+  transform: translateY(-10px);
+}
+
+.highlightCard {
+  transform: translateY(-20px);
+}
+
+.highlightCard:hover {
+  transform: translateY(-30px);
+}
+
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-size: cover;
+  background-position: center;
+}
+
+.stars {
+  color: var(--color-luxury-brown);
+  font-size: var(--text-lg);
+}
+
+.clientName {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  color: var(--color-luxury-brown);
+}
+
+.clientText {
+  font-size: var(--text-base);
+  color: var(--color-text-primary);
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.footer {
+  margin-top: var(--space-8);
+}
+
+@media (max-width: 1024px) {
+  .reviewsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .highlightCard {
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    padding: var(--space-32) var(--space-6) var(--space-16);
+  }
+  
+  .reviewsGrid {
+    grid-template-columns: 1fr;
+  }
+}

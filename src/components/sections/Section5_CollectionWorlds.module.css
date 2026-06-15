@@ -1,0 +1,101 @@
+.section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: var(--color-background);
+}
+
+.header {
+  position: absolute;
+  top: var(--space-24);
+  left: 0;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: var(--text-5xl);
+  color: var(--color-luxury-brown);
+}
+
+.subtitle {
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: var(--space-4);
+}
+
+.scrollContainer {
+  display: flex;
+  height: 100vh;
+  width: max-content;
+  flex-wrap: nowrap;
+}
+
+.worldPanel {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.visual {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.placeholderImage {
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-6);
+}
+
+.worldNumber {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  letter-spacing: 0.2em;
+  margin-bottom: var(--space-6);
+}
+
+.worldName {
+  font-family: var(--font-serif);
+  font-size: var(--text-7xl);
+  margin-bottom: var(--space-6);
+}
+
+.worldDesc {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.6;
+  margin-bottom: var(--space-12);
+}

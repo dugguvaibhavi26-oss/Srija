@@ -1,0 +1,167 @@
+.section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--color-background);
+}
+
+.heroBackground {
+  position: absolute;
+  inset: 0;
+  z-index: var(--z-base);
+  overflow: hidden;
+}
+
+.heroImageWrapper {
+  position: absolute;
+  inset: -10%; /* slight overflow for parallax */
+  width: 120%;
+  height: 120%;
+}
+
+.heroImage {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: contrast(1.1);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, var(--color-background) 0%, transparent 40%, rgba(0,0,0,0.2) 100%);
+}
+
+.contentContainer {
+  position: relative;
+  z-index: var(--z-content);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-8);
+}
+
+.logo {
+  font-family: var(--font-serif);
+  font-size: var(--text-display);
+  color: var(--color-luxury-brown);
+  letter-spacing: 0.1em;
+  font-weight: 300;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.tagline {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.buttons {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.veil {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 51vw; /* slightly overlapping to avoid center gap */
+  background-color: var(--color-ivory-dark);
+  z-index: var(--z-floating);
+  pointer-events: none;
+  box-shadow: 0 0 50px rgba(74, 59, 50, 0.1);
+}
+
+.veilLeft {
+  left: 0;
+  transform-origin: left center;
+}
+
+.veilRight {
+  right: 0;
+  transform-origin: right center;
+}
+
+.silkTexture {
+  position: absolute;
+  inset: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.005" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)" opacity="0.05"/></svg>');
+  mix-blend-mode: overlay;
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: max(var(--space-8), env(safe-area-inset-bottom));
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--color-luxury-brown-dark);
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  opacity: 0.8;
+  z-index: calc(var(--z-floating) + 1); /* Above veils */
+  animation: pulse 3s infinite;
+  pointer-events: none;
+}
+
+.scrollLine {
+  width: 1px;
+  height: 40px;
+  background-color: var(--color-luxury-brown);
+  animation: scrollDown 2s infinite;
+  transform-origin: top;
+}
+
+@keyframes scrollDown {
+  0% { transform: scaleY(0); transform-origin: top; }
+  50% { transform: scaleY(1); transform-origin: top; }
+  50.1% { transform: scaleY(1); transform-origin: bottom; }
+  100% { transform: scaleY(0); transform-origin: bottom; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
+@media (max-width: 768px) {
+  .logo {
+    font-size: var(--text-6xl);
+  }
+  
+  .tagline {
+    font-size: var(--text-sm);
+  }
+  
+  .buttons {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 var(--space-4);
+  }
+
+  .scrollIndicator {
+    font-size: 0.65rem;
+    bottom: max(var(--space-12), env(safe-area-inset-bottom));
+  }
+  
+  .scrollLine {
+    height: 30px;
+  }
+}

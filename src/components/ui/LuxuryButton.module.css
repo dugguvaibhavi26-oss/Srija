@@ -1,0 +1,63 @@
+.button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4) var(--space-8);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  transition: all var(--duration-fast) var(--ease-luxury);
+}
+
+.text {
+  position: relative;
+  z-index: 2;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,255,255,0.2) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-luxury);
+  z-index: 1;
+}
+
+.button:hover .glow {
+  opacity: 1;
+}
+
+.primary {
+  background-color: var(--color-luxury-brown);
+  color: var(--color-ivory);
+  border: 1px solid var(--color-luxury-brown);
+}
+
+.primary:hover {
+  box-shadow: var(--shadow-glow);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--color-luxury-brown);
+  border: 1px solid var(--color-luxury-brown);
+}
+
+.secondary:hover {
+  background-color: var(--color-luxury-brown);
+  color: var(--color-ivory);
+}
+
+.outline {
+  background-color: transparent;
+  color: var(--color-ivory);
+  border: 1px solid rgba(255, 255, 240, 0.5);
+}
+
+.outline:hover {
+  border-color: var(--color-ivory);
+  background-color: rgba(255, 255, 240, 0.1);
+}

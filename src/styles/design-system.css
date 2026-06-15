@@ -1,0 +1,97 @@
+/* SRIJA Luxury Design System */
+
+:root {
+  /* Color Tokens */
+  --color-ivory: #FFFFF0;
+  --color-ivory-dark: #F5F5DC;
+  --color-champagne: #F7E7CE;
+  --color-champagne-dark: #D4AF37;
+  --color-soft-beige: #E6D0BA;
+  --color-rose-gold: #B76E79;
+  --color-luxury-brown: #4A3B32;
+  --color-luxury-brown-dark: #2C221D;
+  --color-muted-sage: #8A9A86;
+  
+  --color-text-primary: var(--color-luxury-brown);
+  --color-text-secondary: #70635A;
+  --color-text-light: var(--color-ivory);
+  --color-background: var(--color-ivory);
+
+  /* Typography Scale */
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Jost", sans-serif;
+
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+  --text-6xl: 3.75rem; /* 60px */
+  --text-7xl: 4.5rem; /* 72px */
+  --text-display: clamp(4rem, 8vw, 8rem); /* Cinematic typography */
+  --text-display-md: clamp(3rem, 5vw, 6rem); 
+
+  /* Spacing Scale */
+  --space-2: 0.5rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  /* Animation Timing Tokens (Luxury Motion Presets) */
+  --ease-luxury: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-slow: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-fluid: cubic-bezier(0.65, 0, 0.05, 1);
+  
+  --duration-fast: 0.3s;
+  --duration-normal: 0.6s;
+  --duration-slow: 1.2s;
+  --duration-cinematic: 2s;
+
+  /* Z-index Hierarchy */
+  --z-background: -10;
+  --z-base: 0;
+  --z-content: 10;
+  --z-floating: 20;
+  --z-nav: 50;
+  --z-drawer: 100;
+  --z-modal: 200;
+  --z-loading: 1000;
+
+  /* Shadows and Depth */
+  --shadow-subtle: 0 4px 20px rgba(74, 59, 50, 0.05);
+  --shadow-medium: 0 8px 30px rgba(74, 59, 50, 0.08);
+  --shadow-luxury: 0 20px 40px rgba(74, 59, 50, 0.12);
+  --shadow-glow: 0 0 15px rgba(212, 175, 55, 0.3);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-round: 50%;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --text-3xl: 1.5rem;
+    --text-4xl: 1.875rem;
+    --text-5xl: 2.25rem;
+    --text-6xl: 2.75rem;
+    --text-7xl: 3.25rem;
+    --text-display: clamp(2.5rem, 8vw, 4rem);
+    --text-display-md: clamp(2rem, 6vw, 3rem);
+
+    --space-12: 2rem;
+    --space-16: 2.5rem;
+    --space-24: 3.5rem;
+    --space-32: 5rem;
+  }
+}

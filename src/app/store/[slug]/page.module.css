@@ -1,0 +1,215 @@
+.pdpContainer {
+  min-height: 100vh;
+  background-color: var(--color-ivory);
+  display: flex;
+  flex-direction: column;
+}
+
+.splitLayout {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 80px; /* Account for nav */
+}
+
+/* LEFT SIDE - IMAGES */
+.imageColumn {
+  flex: 0 0 55%;
+  position: relative;
+  overflow: hidden;
+  background-color: var(--color-soft-beige);
+  height: 100vh;
+}
+
+.sliderTrack {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.mainImageWrapper {
+  flex: 0 0 100%;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.sliderControls {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 10;
+}
+
+.sliderDots {
+  display: flex;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+}
+
+.activeDot {
+  background: white;
+  transform: scale(1.2);
+}
+
+.image {
+  object-fit: cover;
+}
+
+/* RIGHT SIDE - DETAILS */
+.detailsColumn {
+  flex: 0 0 45%;
+  position: relative;
+}
+
+.stickyDetails {
+  position: sticky;
+  top: 100px;
+  padding: var(--space-16) var(--space-24);
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.breadcrumb {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--duration-fast);
+}
+
+.breadcrumb a:hover {
+  color: var(--color-luxury-brown);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--color-luxury-brown-dark);
+  line-height: 1.1;
+  margin: 0;
+}
+
+.price {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  color: var(--color-text-primary);
+  letter-spacing: 0.05em;
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  color: var(--color-text-secondary);
+  line-height: 1.8;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+/* Accordions */
+.accordions {
+  border-top: 1px solid rgba(74, 59, 50, 0.1);
+}
+
+.accordionItem {
+  border-bottom: 1px solid rgba(74, 59, 50, 0.1);
+}
+
+.accordionHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-6) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.accordionContent {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s var(--ease-luxury);
+}
+
+.accordionContent.open {
+  max-height: 500px;
+}
+
+.accordionText {
+  padding-bottom: var(--space-6);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .splitLayout {
+    flex-direction: column;
+  }
+  
+  .imageColumn {
+    flex: none;
+    width: 100%;
+  }
+  
+  .mainImageWrapper {
+    height: 70vh;
+  }
+  
+  .detailsColumn {
+    flex: none;
+    width: 100%;
+  }
+  
+  .stickyDetails {
+    position: relative;
+    top: 0;
+    padding: var(--space-12) var(--space-6);
+    max-width: 100%;
+  }
+}

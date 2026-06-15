@@ -1,0 +1,188 @@
+.section {
+  min-height: 100vh;
+  width: 100vw;
+  background-color: var(--color-luxury-brown-dark);
+  color: var(--color-ivory);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: stretch;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  padding-left: 8vw;
+}
+
+.leftColumn {
+  flex: 0 0 35vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 10;
+}
+
+.titleWrapper {
+  max-width: 400px;
+}
+
+.largeText {
+  font-family: var(--font-serif);
+  font-size: 8vw;
+  line-height: 0.9;
+  color: var(--color-ivory);
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.introDesc {
+  margin-top: var(--space-6);
+  color: var(--color-champagne);
+  font-size: var(--text-lg);
+  font-weight: 300;
+  letter-spacing: 0.1em;
+}
+
+.rightColumn {
+  flex: 1;
+  overflow-x: auto;
+  overflow-y: hidden;
+  /* Hide scrollbar but keep functionality */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.rightColumn::-webkit-scrollbar {
+  display: none;
+}
+
+.cardsTrack {
+  display: flex;
+  gap: var(--space-8);
+  padding: 0 var(--space-12);
+  height: max-content;
+}
+
+.lookCard {
+  flex: 0 0 380px; /* Reduced card width */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.imageWrapper {
+  width: 100%;
+  height: 60vh; /* Reduced card height */
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+}
+
+.imageInner {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.8s var(--ease-luxury);
+}
+
+.lookCard:hover .imageInner {
+  transform: scale(1.05);
+}
+
+.lookInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 var(--space-2);
+}
+
+.lookName {
+  font-family: var(--font-sans);
+  font-size: var(--text-xl);
+  color: var(--color-champagne);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+
+.mobileSwipeHint {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    padding-left: 0;
+  }
+  
+  .leftColumn {
+    flex: 0 0 auto;
+    height: auto;
+    position: relative;
+    padding: var(--space-12) 5vw;
+  }
+  
+  .largeText {
+    font-size: 15vw;
+  }
+  
+  .rightColumn {
+    padding-bottom: var(--space-12);
+  }
+}
+
+@media (max-width: 768px) {
+  .rightColumn {
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .cardsTrack {
+    padding: 0 5vw; /* Align gap near the products with shop runway button */
+    gap: var(--space-4); /* Reduce gap on mobile */
+  }
+
+  .lookCard {
+    flex: 0 0 80vw; /* Shows 1 card prominently with a peek of the next */
+    scroll-snap-align: start;
+  }
+  
+  .imageWrapper {
+    height: 55vh; /* Increase height for 1-column layout */
+  }
+
+  .lookName {
+    font-size: var(--text-sm);
+    letter-spacing: 0.1em;
+  }
+  
+  .lookInfo button {
+    padding: 8px 16px;
+    font-size: 0.6rem;
+  }
+
+  .mobileSwipeHint {
+    display: flex;
+    align-items: center;
+    margin-top: var(--space-8);
+    font-size: var(--text-sm);
+    color: var(--color-champagne);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    opacity: 0.7;
+    animation: pulse 2s infinite;
+  }
+}
+
+@keyframes pulse {
+  0% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+  100% { opacity: 0.4; }
+}
