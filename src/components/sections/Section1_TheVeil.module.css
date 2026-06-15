@@ -87,7 +87,7 @@
 .veilLeft {
   left: 0;
   transform-origin: left center;
-  background-image: url('https://i.ibb.co/SwY37vLq/Chat-GPT-Image-Jun-15-2026-06-33-19-PM.png');
+  background-image: url('https://i.ibb.co/KjBGzBhZ/60d11a9a-cddf-47f5-ab9d-179ebd5a980a.png');
   background-size: 100vw 100vh;
   background-position: left top;
 }
@@ -95,7 +95,7 @@
 .veilRight {
   right: 0;
   transform-origin: right center;
-  background-image: url('https://i.ibb.co/SwY37vLq/Chat-GPT-Image-Jun-15-2026-06-33-19-PM.png');
+  background-image: url('https://i.ibb.co/KjBGzBhZ/60d11a9a-cddf-47f5-ab9d-179ebd5a980a.png');
   background-size: 100vw 100vh;
   background-position: right top;
 }
@@ -172,6 +172,6 @@
   }
 
   .veilLeft, .veilRight {
-    background-image: url('https://i.ibb.co/hJXgjH25/Chat-GPT-Image-Jun-15-2026-06-28-36-PM.png');
+    background-image: url('https://i.ibb.co/KjBGzBhZ/60d11a9a-cddf-47f5-ab9d-179ebd5a980a.png');
   }
 }
