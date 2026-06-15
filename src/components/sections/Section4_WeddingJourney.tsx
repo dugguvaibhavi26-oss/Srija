@@ -10,6 +10,7 @@ import * as THREE from "three";
 import { occasions } from "../../data/occasions";
 import styles from "./Section4_WeddingJourney.module.css";
 import { LuxuryButton } from "../ui/LuxuryButton";
+import Link from "next/link";
 
 function CarouselItem({ occasion, index, totalItems, radius }: { occasion: any, index: number, totalItems: number, radius: number }) {
   const angle = (index / totalItems) * Math.PI * 2;
@@ -169,7 +170,7 @@ export default function Section4_WeddingJourney() {
           <span className={styles.chapterNumber}>CHAPTER 0{activeIndex + 1}</span>
           <h3 className={styles.occasionName}>{activeOccasion?.name}</h3>
           <p className={styles.occasionDesc}>{activeOccasion?.description}</p>
-          <button className={styles.ctaButton}>Explore Collection</button>
+          <Link href="/store" className={styles.ctaButton}>Explore Collection</Link>
           
           <div className={styles.progressContainer}>
             {occasions.map((_, idx) => (
