@@ -38,10 +38,8 @@ export default function Section1_TheVeil() {
   return (
     <section ref={containerRef} className={styles.section}>
       <div ref={leftVeilRef} className={`${styles.veil} ${styles.veilLeft}`}>
-        <div className={styles.silkTexture}></div>
       </div>
       <div ref={rightVeilRef} className={`${styles.veil} ${styles.veilRight}`}>
-        <div className={styles.silkTexture}></div>
       </div>
 
       <div className={styles.heroBackground}>

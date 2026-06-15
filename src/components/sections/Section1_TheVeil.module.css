@@ -78,20 +78,26 @@
   top: 0;
   bottom: 0;
   width: 51vw; /* slightly overlapping to avoid center gap */
-  background-color: var(--color-ivory-dark);
   z-index: var(--z-floating);
   pointer-events: none;
   box-shadow: 0 0 50px rgba(74, 59, 50, 0.1);
+  background-repeat: no-repeat;
 }
 
 .veilLeft {
   left: 0;
   transform-origin: left center;
+  background-image: url('https://i.ibb.co/SwY37vLq/Chat-GPT-Image-Jun-15-2026-06-33-19-PM.png');
+  background-size: 100vw 100vh;
+  background-position: left top;
 }
 
 .veilRight {
   right: 0;
   transform-origin: right center;
+  background-image: url('https://i.ibb.co/SwY37vLq/Chat-GPT-Image-Jun-15-2026-06-33-19-PM.png');
+  background-size: 100vw 100vh;
+  background-position: right top;
 }
 
 .silkTexture {
@@ -163,5 +169,9 @@
   
   .scrollLine {
     height: 30px;
+  }
+
+  .veilLeft, .veilRight {
+    background-image: url('https://i.ibb.co/hJXgjH25/Chat-GPT-Image-Jun-15-2026-06-28-36-PM.png');
   }
 }
